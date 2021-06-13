@@ -1,6 +1,7 @@
 import React from 'react';
+
 import { UserType } from '../../types/User';
-import styled from '@emotion/styled';
+import { UserStyed } from './UserStyled';
 
 type UserData = {
     index: number;
@@ -14,15 +15,3 @@ export const User = ({ user, index }: UserData) => {
         <td>@{user.username}</td>
     </UserStyed>
 }
-
-const UserStyed = styled.tr`
-    & td {
-        border-bottom:1px solid silver;
-        text-align: left;
-        padding: 8px 16px;
-    }
-    & td:nth-child(odd) {
-        color:silver;
-    }
-
-`
