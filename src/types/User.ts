@@ -1,29 +1,29 @@
-export type User = {
+export type UserType = {
     id: number | null;
     name: string;
     username: string;
     email: string,
-    address: Address;
+    address: AddressType;
     phone: string;
     website: string;
-    company: Company;
+    company: CompanyType;
 }
 
-export type Address = {
+export type AddressType = {
     street: string;
     suite: string;
     city: string;
     zipcode: string;
-    geo: GeoCoords;
+    geo: GeoCoordsType;
 }
 
-export type Company = {
+export type CompanyType = {
     name: string;
     catchPhrase: string;
     bs: string;
 }
 
-export type GeoCoords = {
+export type GeoCoordsType = {
     lat: string,
     lng: string
 }
