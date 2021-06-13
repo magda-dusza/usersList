@@ -1,17 +1,18 @@
 import React from 'react';
+import { API_USERS } from '../../consts/api';
 
-import { UserType } from '../../types/User';
+import { UserType } from '../../types/UserType';
 
 import { User } from './User';
 import { ListWrapper, SearchInput, UserTable } from './UserStyled';
 
 export const UsersList = () => {
-    const [users, setUsers] = React.useState([]);
-    const [displayedUsers, setDisplayedUsers] = React.useState([]);
+    const [users, setUsers] = React.useState<UserType[]>([]);
+    const [displayedUsers, setDisplayedUsers] = React.useState<UserType[]>([]);
     const [query, setQuery] = React.useState('');
 
     React.useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users')
+        fetch(API_USERS)
             .then(res => res.json())
             .then(usersList => setUsers(usersList))
     }, []);

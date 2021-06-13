@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { UserType } from '../../types/User';
+import { UserType } from '../../types/UserType';
 import { UserStyed } from './UserStyled';
 
 type UserData = {
@@ -9,9 +9,11 @@ type UserData = {
 }
 
 export const User = ({ user, index }: UserData) => {
-    return <UserStyed>
-        <td>{index}.</td>
-        <td>{user.name}</td>
-        <td>@{user.username}</td>
-    </UserStyed>
+    return user && (
+        <UserStyed>
+            <td>{index}.</td>
+            <td>{user.name}</td>
+            <td>@{user.username}</td>
+        </UserStyed>
+    )
 }
